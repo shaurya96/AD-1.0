@@ -1,0 +1,14 @@
+{
+  "default": true,
+
+  "MD033": {
+    "allowed_elements": ["div", "p", "img", "figure", "figcaption"]
+  },
+
+  "MD013": false, 
+
+  "MD007": { "indent": 2 },
+  "MD004": "dash",
+  "MD029": "ordered",
+  "MD030": { "ul_single": 1, "ol_single": 1, "ul_multi": 1, "ol_multi": 1 }
+}
