@@ -36,13 +36,10 @@ Active Directory is the backbone of most enterprise environments, making it crit
 - **Target Machine (Windows 10)** - `192.168.194.151`
 - **Attacker Machine (Kali Linux)** - `192.168.194.129`
 
-  <div style="display:inline-block; text-align:center; max-width:700px;">
-    <img src="assets/screenshots/1.network-diagram.png" alt="Network Diagram" style="max-width:100%; height:auto; display:block;" />
-    <p style="margin:6px 0 14px; font-style:italic; font-size:0.95em;">
-      📸 Figure-1: Screenshot of Network diagram
-    </p>
-  </div>
-
+  <p align="center">
+  <img src="assets/screenshots/1.network-diagram.png" alt="Network Diagram" width="700"/><br>
+  <em>📸 Figure-1: Screenshot of Network diagram</em>
+  </p>
 
 ## 🖥️ Part 2: Virtual Machine Installation
 
@@ -60,12 +57,10 @@ Active Directory is the backbone of most enterprise environments, making it crit
 - Downloaded Windows 10 ISO using Microsoft Media Creation Tool
 - Configured VM with 4GB RAM, 60GB storage and 6 core CPU
 
- <div style="display:inline-block; text-align:center; max-width:700px;">
-   <img src="assets/screenshots/2.windows-OS-installed.png" alt="Windows 10 Installation" style="max-width:100%; height:auto; display:block;" />
-   <p style="margin:6px 0 14px; font-style:italic; font-size:0.95em;">
-     📸 Figure-2: Windows 10 virtual installed along with the configuration
-   </p>
- </div>
+ <p align="center">
+  <img src="assets/screenshots/2.windows-OS-installed.png" alt="Windows 10 Installation" width="700"/><br>
+  <em>📸 Figure-2: Windows 10 virtual installed along with the configuration</em>
+</p>
 
 **Kali Linux Attacker Machine:**
 
@@ -74,12 +69,10 @@ Active Directory is the backbone of most enterprise environments, making it crit
 - Configured VM with 4GB RAM, 80GB storage and 4 core CPU
 - Default credentials: kali:kali
 
- <div style="display:inline-block; text-align:center; max-width:700px;">
-   <img src="assets/screenshots/3.kali-linux-installed.png" alt="Kali Linux Installation" style="max-width:100%; height:auto; display:block;" />
-   <p style="margin:6px 0 14px; font-style:italic; font-size:0.95em;">
-     📸 Figure-3: Kali Linux installed along with the configuration
-   </p>
- </div>
+ <p align="center">
+  <img src="assets/screenshots/3.kali-linux-installed.png" alt="Kali Linux Installation" width="700"/><br>
+  <em>📸 Figure-3: Kali Linux installed along with the configuration</em>
+</p>
 
 **Windows Server 2022 (Domain Controller):**
 
@@ -87,12 +80,10 @@ Active Directory is the backbone of most enterprise environments, making it crit
 - Installed Windows Server 2022 Standard (Desktop Experience)
 - Configured VM with 8GB RAM, 100GB storage and 4 core CPU
 
-<div style="display:inline-block; text-align:center; max-width:700px;">
-  <img src="assets/screenshots/4.windows-server-installed.png" alt="Windows Server Installation" style="max-width:100%; height:auto; display:block;" />
-  <p style="margin:6px 0 14px; font-style:italic; font-size:0.95em;">
-    📸 Figure-4: Windows Server 2022 installed along with the configuration
-  </p>
-</div>
+<p align="center">
+  <img src="assets/screenshots/4.windows-server-installed.png" alt="Windows Server Installation" width="700"/><br>
+  <em>📸 Figure-4: Windows Server 2022 installed along with the configuration</em>
+</p>
 
 **Ubuntu Server 22.04 (Splunk Server):**
 
@@ -102,12 +93,10 @@ Active Directory is the backbone of most enterprise environments, making it crit
 - Set username: shauryajain
 - Once installed run the command `sudo apt-get update && sudo apt-get upgrade -y` to update and upgrade all of the repositories
 
-<div style="display:inline-block; text-align:center; max-width:700px;">
-  <img src="assets/screenshots/5.ubuntu-server-installed.png" alt="Ubuntu Server Installation" style="max-width:100%; height:auto; display:block;" />
-  <p style="margin:6px 0 14px; font-style:italic; font-size:0.95em;">
-    📸 Figure-5: Ubuntu Server 22.04 installed along with the configuration
-  </p>
-</div>
+<p align="center">
+  <img src="assets/screenshots/5.ubuntu-server-installed.png" alt="Ubuntu Server Installation" width="700"/><br>
+  <em>📸 Figure-5: Ubuntu Server 22.04 installed along with the configuration</em>
+</p>
 
 ## 🌐 Part 3: Network Configuration & Monitoring Setup
 
@@ -201,59 +190,48 @@ Active Directory is the backbone of most enterprise environments, making it crit
   - Log in to Splunk Web
     - From any machine on the NAT network we can access the splunk using the address `http://192.168.194.150:8000`
 
-  <div style="display:inline-block; text-align:center; max-width:700px;">
-    <img src="assets/screenshots/6.splunk-headless-server.png" alt="Splunk installed on Ubuntu Server" style="max-width:100%; height:auto; display:block;" />
-    <p style="margin:6px 0 14px; font-style:italic; font-size:0.95em;">
-      📸 Figure-6: Ubuntu Server 22.04 with Splunk installed
-    </p>
-  </div>
+  <p align="center">
+  <img src="assets/screenshots/6.splunk-headless-server.png" alt="Splunk installed on Ubuntu Server" width="700"/><br>
+  <em>📸 Figure-6: Ubuntu Server 22.04 with Splunk installed</em>
+  </p>
 
-  <div style="display:inline-block; text-align:center; max-width:700px;">
-    <img src="assets/screenshots/7.splunk-web-interface.png" alt="Splunk Web Interface" style="max-width:100%; height:auto; display:block;" />
-    <p style="margin:6px 0 14px; font-style:italic; font-size:0.95em;">
-      📸 Figure-7: Splunk web interface
-    </p>
-  </div>
+  <p align="center">
+  <img src="assets/screenshots/7.splunk-web-interface.png" alt="Splunk Web Interface" width="700"/><br>
+  <em>📸 Figure-7: Splunk web interface</em>
+  </p>
+
 
 ### Configuring Windows Target Machine
 
 - First, we will rename the windows machine to `target-PC`
 - Then, we will assign static IP (`192.168.194.151`) to the machine and change Network Adapter to NAT for internet access and VM communication
 
-  <div style="display:inline-block; text-align:center; max-width:700px;">
-    <img src="assets/screenshots/8.static-ip-assignment.png" alt="Static IP Assignment Process" style="max-width:100%; height:auto; display:block;" />
-    <p style="margin:6px 0 14px; font-style:italic; font-size:0.95em;">
-      📸 Figure-8: Static IP assignment process
-    </p>
-  </div>
+  <p align="center">
+  <img src="assets/screenshots/8.static-ip-assignment.png" alt="Static IP Assignment Process" width="700"/><br>
+  <em>📸 Figure-8: Static IP assignment process</em>
+  </p>
 
-  <div style="display:inline-block; text-align:center; max-width:700px;">
-    <img src="assets/screenshots/9.static-ip-proof.png" alt="Static IP Assignment Proof" style="max-width:100%; height:auto; display:block;" />
-    <p style="margin:6px 0 14px; font-style:italic; font-size:0.95em;">
-      📸 Figure-9: Static IP assignment proof
-    </p>
-  </div>
+  <p align="center">
+  <img src="assets/screenshots/9.static-ip-proof.png" alt="Static IP Assignment Proof" width="700"/><br>
+  <em>📸 Figure-9: Static IP assignment proof</em>
+  </p>
 
 - Then, we will install [Splunk Universal Forwarder](https://splunk.com)
   - For the Receiving Indexer we will use the IP of Splunk/Ubuntu Server `192.168.194.150` on port `9997`
 
-  <div style="display:inline-block; text-align:center; max-width:700px;">
-    <img src="assets/screenshots/10.splunk-uf-installed.png" alt="Splunk Universal Forwarder Installed" style="max-width:100%; height:auto; display:block;" />
-    <p style="margin:6px 0 14px; font-style:italic; font-size:0.95em;">
-      📸 Figure-10: Splunk UF Installed
-    </p>
-  </div>
+  <p align="center">
+  <img src="assets/screenshots/10.splunk-uf-installed.png" alt="Splunk Universal Forwarder Installed" width="700"/><br>
+  <em>📸 Figure-10: Splunk UF Installed</em>
+  </p>
 
 - Now, let's move to installing [Sysmon](https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon) in the windows machine.
   - Once installed using the above link, let's install the [configuration file](https://github.com/olafhartong/sysmon-modular/blob/master/sysmonconfig.xml)
   - Run sysmon with the configuration file, using the command `.\sysmon.exe -i sysmonconfig.xml`
   
-  <div style="display:inline-block; text-align:center; max-width:700px;">
-  <img src="assets/screenshots/11.sysmon-installed.png" alt="Sysmon installed" style="max-width:100%; height:auto; display:block;" />
-  <p style="margin:6px 0 14px; font-style:italic; font-size:0.95em;">
-    📸 Figure-11: Sysmon Installed
+  <p align="center">
+  <img src="assets/screenshots/11.sysmon-installed.png" alt="Sysmon installed" width="700"/><br>
+  <em>📸 Figure-11: Sysmon Installed</em>
   </p>
-  </div>
 
 - Now, configure the **Splunk Universal Forwarder (UF)** to ingest core Windows Event Logs (**Application, Security, System**) along with **Sysmon** logs and send them to the Splunk server, routing them into the custom index **`endpoint`**. This can be done by adding the appropriate entries in the `inputs.conf` file.
   - I used the `inputs.conf` below
@@ -292,12 +270,10 @@ Active Directory is the backbone of most enterprise environments, making it crit
   - But before that, we need to change `Log On As` from `NT Service\Splunk Forwarder` to `Local System account`
   - In Splunk Console, create a custom index named **`endpoint`** (Splunk Web → Settings → Indexes → New Index) to store host telemetry and Sysmon data.
 
-    <div style="display:inline-block; text-align:center; max-width:700px;">
-     <img src="assets/screenshots/12.endpoint-index.png" alt="Endpoint Index" style="max-width:100%; height:auto; display:block;" />
-     <p style="margin:6px 0 14px; font-style:italic; font-size:0.95em;">
-      📸 Figure-12: Splunk Endpoint Index
-     </p>
-    </div>
+    <p align="center">
+    <img src="assets/screenshots/12.endpoint-index.png" alt="Endpoint Index" width="700"/><br>
+    <em>📸 Figure-12: Splunk Endpoint Index</em>
+    </p>
 
 ### Configuring Windows Server 2022 (Domain Controller)
 
@@ -308,12 +284,10 @@ Active Directory is the backbone of most enterprise environments, making it crit
 ### Data Ingestion Verification
 
 - Verified log ingestion from both Windows machines
-  <div style="display:inline-block; text-align:center; max-width:700px;">
-  <img src="assets/screenshots/13.data-ingestion-proof.png" alt="Splunk data ingestion verification" style="max-width:100%; height:auto; display:block;" />
-  <p style="margin:6px 0 14px; font-style:italic; font-size:0.95em;">
-    📸 Figure-13: Splunk data ingestion proof
+  <p align="center">
+  <img src="assets/screenshots/13.data-ingestion-proof.png" alt="Splunk data ingestion verification" width="700"/><br>
+  <em>📸 Figure-13: Splunk data ingestion proof</em>
   </p>
-  </div>
 
 ## 🏗️ Part 4: Active Directory Domain Services Installation
 
@@ -325,19 +299,15 @@ Active Directory is the backbone of most enterprise environments, making it crit
 - Promoted server to Domain Controller with new forest: mydfir.local
 - **Critical Security Note:** The ntds.dit file contains all AD data including password hashes - attackers target this file specifically
 
-<div style="display:inline-block; text-align:center; max-width:700px;">
-  <img src="assets/screenshots/14.AD-installed.png" alt="AD installed" style="max-width:100%; height:auto; display:block;" />
-  <p style="margin:6px 0 14px; font-style:italic; font-size:0.95em;">
-    📸 Figure-14: ADDS installed with server promoted to DC with mydfir.local domain
-  </p>
-</div>
+<p align="center">
+  <img src="assets/screenshots/14.AD-installed.png" alt="AD installed" width="700"/><br>
+  <em>📸 Figure-14: ADDS installed with server promoted to DC with mydfir.local domain</em>
+</p>
 
-<div style="display:inline-block; text-align:center; max-width:700px;">
-  <img src="assets/screenshots/15.DC-login.png" alt="DC login" style="max-width:100%; height:auto; display:block;" />
-  <p style="margin:6px 0 14px; font-style:italic; font-size:0.95em;">
-    📸 Figure-15: DC login screen
-  </p>
-</div>
+<p align="center">
+  <img src="assets/screenshots/15.DC-login.png" alt="DC login" width="700"/><br>
+  <em>📸 Figure-15: DC login screen</em>
+</p>
 
 ### Active Directory Structure & User Management
 
@@ -347,26 +317,20 @@ Active Directory is the backbone of most enterprise environments, making it crit
   - Terry Smith (tsmith) - HR Department
 - Configured proper OU structure mimicking real enterprise environments
 
-<div style="display:inline-block; text-align:center; max-width:700px;">
-  <img src="assets/screenshots/16.AD-arch-1.png" alt="AD Architecture" style="max-width:100%; height:auto; display:block;" />
-  <p style="margin:6px 0 14px; font-style:italic; font-size:0.95em;">
-    📸 Figure-16: Active Directory Users and Computers showing OUs and containers
-  </p>
-</div>
+<p align="center">
+  <img src="assets/screenshots/16.AD-arch-1.png" alt="AD Architecture" width="700"/><br>
+  <em>📸 Figure-16: Active Directory Users and Computers showing OUs and containers</em>
+</p>
 
-<div style="display:inline-block; text-align:center; max-width:700px;">
-  <img src="assets/screenshots/17.AD-arch-2.png" alt="AD USER jsmith" style="max-width:100%; height:auto; display:block;" />
-  <p style="margin:6px 0 14px; font-style:italic; font-size:0.95em;">
-    📸 Figure-17: Active Directory User jsmith
-  </p>
-</div>
+<p align="center">
+  <img src="assets/screenshots/17.AD-arch-2.png" alt="AD USER jsmith" width="700"/><br>
+  <em>📸 Figure-17: Active Directory User jsmith</em>
+</p>
 
-<div style="display:inline-block; text-align:center; max-width:700px;">
-  <img src="assets/screenshots/18.AD-arch-3.png" alt="AD USER tsmith" style="max-width:100%; height:auto; display:block;" />
-  <p style="margin:6px 0 14px; font-style:italic; font-size:0.95em;">
-    📸 Figure-18: Active Directory User tsmith
-  </p>
-</div>
+<p align="center">
+  <img src="assets/screenshots/18.AD-arch-3.png" alt="AD USER tsmith" width="700"/><br>
+  <em>📸 Figure-18: Active Directory User tsmith</em>
+</p>
 
 ### Domain Join Process
 
@@ -375,26 +339,20 @@ Active Directory is the backbone of most enterprise environments, making it crit
 - Authenticated with domain user Jenny Smith (jsmith)
 - Verified domain authentication and user profile creation
 
-<div style="display:inline-block; text-align:center; max-width:700px;">
-  <img src="assets/screenshots/19.windows-machine-dns.png" alt="Windows Machine DNS" style="max-width:100%; height:auto; display:block;" />
-  <p style="margin:6px 0 14px; font-style:italic; font-size:0.95em;">
-    📸 Figure-19: Windows Machine DNS changed to Domain Controller IP
-  </p>
-</div>
+<p align="center">
+  <img src="assets/screenshots/19.windows-machine-dns.png" alt="Windows Machine DNS" width="700"/><br>
+  <em>📸 Figure-19: Windows Machine DNS changed to Domain Controller IP</em>
+</p>
 
-<div style="display:inline-block; text-align:center; max-width:700px;">
-  <img src="assets/screenshots/20.domain-joined.png" alt="Windows Machine joins the Domain" style="max-width:100%; height:auto; display:block;" />
-  <p style="margin:6px 0 14px; font-style:italic; font-size:0.95em;">
-    📸 Figure-20: Windows Machine joins the domain
-  </p>
-</div>
+<p align="center">
+  <img src="assets/screenshots/20.domain-joined.png" alt="Windows Machine joins the Domain" width="700"/><br>
+  <em>📸 Figure-20: Windows Machine joins the domain</em>
+</p>
 
-<div style="display:inline-block; text-align:center; max-width:700px;">
-  <img src="assets/screenshots/21.domain-user.png" alt="Domain User login page" style="max-width:100%; height:auto; display:block;" />
-  <p style="margin:6px 0 14px; font-style:italic; font-size:0.95em;">
-    📸 Figure-21: Login Screen showing the Domain User
-  </p>
-</div>
+<p align="center">
+  <img src="assets/screenshots/21.domain-user.png" alt="Domain User login page" width="700"/><br>
+  <em>📸 Figure-21: Login Screen showing the Domain User</em>
+</p>
 
 ## 🎯 Part 5: Attack Simulation & Detection Analysis
 
@@ -403,22 +361,17 @@ Active Directory is the backbone of most enterprise environments, making it crit
 ### Kali Linux Machine Configuration and RDP Authentication automation
 
 - Set static IP for Kali Linux: `192.168.194.129`
-  <div style="display:inline-block; text-align:center; max-width:700px;">
-  <img src="assets/screenshots/22.kali-linux-static-ip.png" alt="Kali Linux Static IP" style="max-width:100%; height:auto; display:block;" />
-  <p style="margin:6px 0 14px; font-style:italic; font-size:0.95em;">
-    📸 Figure-22: Kali Linux Static IP assignment
+  <p align="center">
+  <img src="assets/screenshots/22.kali-linux-static-ip.png" alt="Kali Linux Static IP" width="700"/><br>
+  <em>📸 Figure-22: Kali Linux Static IP assignment</em>
   </p>
-  </div>
 
 - Before performing RDP authentication we need to make sure RDP is allowed
   
-  <div style="display:inline-block; text-align:center; max-width:700px;">
-  <img src="assets/screenshots/23.RDP-enabled.png" alt="RDP Enabled" style="max-width:100%; height:auto; display:block;" />
-  <p style="margin:6px 0 14px; font-style:italic; font-size:0.95em;">
-    📸 Figure-23: RDP enabled on Windows Machine
+  <p align="center">
+  <img src="assets/screenshots/23.RDP-enabled.png" alt="RDP Enabled" width="700"/><br>
+  <em>📸 Figure-23: RDP enabled on Windows Machine</em>
   </p>
-  </div>
-
 
 - Now, we wanted to automate testing of RDP authentication on the Windows target machine — verifying whether weak credentials allow remote login
   - Ran Crowbar to brute-force RDP.
@@ -432,12 +385,10 @@ Active Directory is the backbone of most enterprise environments, making it crit
   - Successfully compromised Terry Smith's account through password brute forcing
   - Generated 20 failed login attempts followed by 1 successful authentication
 
-   <div style="display:inline-block; text-align:center; max-width:700px;">
-  <img src="assets/screenshots/24.rdp-access.png" alt="RDP Access" style="max-width:100%; height:auto; display:block;" />
-  <p style="margin:6px 0 14px; font-style:italic; font-size:0.95em;">
-    📸 Figure-24: RDP Access to Windows target machine from KALI Linux
-  </p>
-  </div>
+   <p align="center">
+   <img src="assets/screenshots/24.rdp-access.png" alt="RDP Access" width="700"/><br>
+   <em>📸 Figure-24: RDP Access to Windows target machine from KALI Linux</em>
+   </p>
 
 ### Splunk Detection & Analysis
 
@@ -446,31 +397,25 @@ Active Directory is the backbone of most enterprise environments, making it crit
   - Source IP traced to Kali Linux machine (192.168.194.129)
   - Temporal correlation shows rapid successive attempts indicating automated attack
 
-    <div style="display:inline-block; text-align:center; max-width:700px;">
-     <img src="assets/screenshots/25.splunk-multiple-failed-logins.png" alt="Event ID 4624 and 4625" style="max-width:100%; height:auto; display:block;" />
-     <p style="margin:6px 0 14px; font-style:italic; font-size:0.95em;">
-      📸 Figure-25: Splunk showing multiple Event ID 4625 (failed login) and Event ID 4624 (successful) events for Terry Smith
-     </p>
-    </div>
+    <p align="center">
+    <img src="assets/screenshots/25.splunk-multiple-failed-logins.png" alt="Event ID 4624 and 4625" width="700"/><br>
+    <em>📸 Figure-25: Splunk showing multiple Event ID 4625 (failed login) and Event ID 4624 (successful) events for Terry Smith</em>
+    </p>
 
-    <div style="display:inline-block; text-align:center; max-width:700px;">
-     <img src="assets/screenshots/26.event-code-4625.png" alt="Event ID 4625" style="max-width:100%; height:auto; display:block;" />
-     <p style="margin:6px 0 14px; font-style:italic; font-size:0.95em;">
-      📸 Figure-26: Splunk showing multiple Event ID 4625 (failed login) events for Terry Smith
-     </p>
-    </div>
+    <p align="center">
+    <img src="assets/screenshots/26.event-code-4625.png" alt="Event ID 4625" width="700"/><br>
+    <em>📸 Figure-26: Splunk showing multiple Event ID 4625 (failed login) events for Terry Smith</em>
+    </p>
 
 - **Successful Authentication Detection (Event ID 4624):**
   - Identified successful login from Kali workstation
   - Correlated attack timeline: multiple failures followed by success
   - Key IOCs: Workstation name "Kali" and source IP 192.168.10.250
 
-   <div style="display:inline-block; text-align:center; max-width:700px;">
-  <img src="assets/screenshots/27.event-code-4624.png" alt="Event ID 4624" style="max-width:100%; height:auto; display:block;" />
-  <p style="margin:6px 0 14px; font-style:italic; font-size:0.95em;">
-    📸 Figure-27: Event ID 4624 showing successful login with Kali workstation details
-  </p>
-  </div>
+   <p align="center">
+   <img src="assets/screenshots/27.event-code-4624.png" alt="Event ID 4624" width="700"/><br>
+   <em>📸 Figure-27: Event ID 4624 showing successful login with Kali workstation details</em>
+   </p>
 
 ### Atomic Red Team Installation and Implementation
 
@@ -490,19 +435,15 @@ Active Directory is the backbone of most enterprise environments, making it crit
       - an earlier installer attempt failed due to network/DNS/proxy issues.
     - You later found `install-atomicredteam.ps1` under `C:\AtomicRedTeam\invoke-atomicredteam` and loaded it — that’s the missing step: load the helper
   
-  <div style="display:inline-block; text-align:center; max-width:700px;">
-  <img src="assets/screenshots/28.atomic-red-team-test.png" alt="Installed Atomic Red Team" style="max-width:100%; height:auto; display:block;" />
-  <p style="margin:6px 0 14px; font-style:italic; font-size:0.95em;">
-    📸 Figure-28: Installation of Atomic Red Team
+  <p align="center">
+  <img src="assets/screenshots/28.atomic-red-team-test.png" alt="Installed Atomic Red Team" width="700"/><br>
+  <em>📸 Figure-28: Installation of Atomic Red Team</em>
   </p>
-  </div>
 
-  <div style="display:inline-block; text-align:center; max-width:700px;">
-  <img src="assets/screenshots/29.splunk-detecting-art-activity.png" alt="Splunk detecting Atomic Red Team Activity" style="max-width:100%; height:auto; display:block;" />
-  <p style="margin:6px 0 14px; font-style:italic; font-size:0.95em;">
-    📸 Figure-29: Splunk detecting Atomic Red Team Activity
+  <p align="center">
+  <img src="assets/screenshots/29.splunk-detecting-art-activity.png" alt="Splunk detecting Atomic Red Team Activity" width="700"/><br>
+  <em>📸 Figure-29: Splunk detecting Atomic Red Team Activity</em>
   </p>
-  </div>
 
 ---
 
